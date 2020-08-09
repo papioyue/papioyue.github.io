@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Papio的博客</title>
+  
+  
+  <link href="http://yoursite.com/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2020-08-09T14:17:34.929Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>papio</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ubuntun14.04安装MySQL5.7</title>
+    <link href="http://yoursite.com/2020/08/09/Ubuntun14-04%E5%AE%89%E8%A3%85MySQL5.7/"/>
+    <id>http://yoursite.com/2020/08/09/Ubuntun14-04%E5%AE%89%E8%A3%85MySQL5.7/</id>
+    <published>2020-08-09T13:36:30.000Z</published>
+    <updated>2020-08-09T14:17:34.929Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;Ubuntun14-04安装MySQL5-7&quot;&gt;&lt;a href=&quot;#Ubuntun14-04安装MySQL5-7&quot; class=&quot;headerlink&quot; title=&quot;Ubuntun14.04安装MySQL5.7&quot;&gt;&lt;/a&gt;Ubuntun14.04安装MySQL5.7&lt;/h2&gt;&lt;h3 id=&quot;准备环境&quot;&gt;&lt;a href=&quot;#准备环境&quot; class=&quot;headerlink&quot; title=&quot;准备环境&quot;&gt;&lt;/a&gt;准备环境&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;查看系统版本下载相对应的mysql版本&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;uname -a 或者 lsb_release -a&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;下载对应的版本&lt;a href=&quot;https://dev.mysql.com/downloads/file/?id=471390&quot;&gt;mysq5.7.19&lt;/a&gt;,下载完成后将MySQL安装包上传的到服务器&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
+    
+    
+    <category term="ubuntun" scheme="http://yoursite.com/tags/ubuntun/"/>
+    
+    <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+    
+    <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+    
+  </entry>
+  
+</feed>

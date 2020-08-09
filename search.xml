@@ -1,21 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/08/08/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+    <title>Ubuntun14.04安装MySQL5.7</title>
+    <url>/2020/08/09/Ubuntun14-04%E5%AE%89%E8%A3%85MySQL5.7/</url>
+    <content><![CDATA[<h2 id="Ubuntun14-04安装MySQL5-7"><a href="#Ubuntun14-04安装MySQL5-7" class="headerlink" title="Ubuntun14.04安装MySQL5.7"></a>Ubuntun14.04安装MySQL5.7</h2><h3 id="准备环境"><a href="#准备环境" class="headerlink" title="准备环境"></a>准备环境</h3><ol>
+<li><p>查看系统版本下载相对应的mysql版本</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">uname -a 或者 lsb_release -a</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>下载对应的版本<a href="https://dev.mysql.com/downloads/file/?id=471390">mysq5.7.19</a>,下载完成后将MySQL安装包上传的到服务器</p>
+<a id="more"></a>
 
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h3 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h3><ol>
+<li><p>切换为root权限</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">su root</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更新资源</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">   sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>cd到放置mysql安装包的路径将该包解压</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">   <span class="built_in">cd</span> xxx</span><br><span class="line">tar -xvf mysql-server_5.7.19-1ubuntu14.04_amd64.deb-bundle.tar</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>解压完之后一共应该有11个压缩包，按照一定顺序安装，顺序如下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">   sudo dpkg -i mysql-common_5.7.19-1ubuntu14.04_amd64.deb</span><br><span class="line">   sudo dpkg -i libmysqlclient20_5.7.19-1ubuntu14.04_amd64.deb</span><br><span class="line">   sudo dpkg -i libmysqlclient-dev_5.7.19-1ubuntu14.04_amd64.deb</span><br><span class="line">   sudo dpkg -i libmysqld-dev_5.7.19-1ubuntu14.04_amd64.deb</span><br><span class="line">   sudo apt-get install libaio1</span><br><span class="line">   sudo dpkg -i mysql-community-client_5.7.19-1ubuntu14.04_amd64.deb</span><br><span class="line">   sudo dpkg -i mysql-client_5.7.19-1ubuntu14.04_amd64.deb</span><br><span class="line">   sudo dpkg -i mysql-community-source_5.7.19-1ubuntu14.04_amd64.deb</span><br><span class="line">   sudo apt-get install libmecab2</span><br><span class="line">sudo dpkg -i mysql-community-server_5.7.19-1ubuntu14.04_amd64.deb</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>按照如上步骤不出意外应该是能成功安装完成，在安装过程中会弹出一个界面让你输入密码，切记要记住自己输入的密码；安装完默认MySQL已经启动了，如果想查看是否已经启动可以通过如下命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">service mysql status</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>默认情况下MySQL是不支持远程连接的，所以需要修改一些配置，具体命令如下</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">   <span class="built_in">cd</span> /etc/mysql/mysql.conf.d</span><br><span class="line">vim mysqld.cnf</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>将bind-address =127.0.0.1改为0.0.0.0即可，保存</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">   grant all privileges on *.* to <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;%&#x27;</span> identified by <span class="string">&#x27;密码&#x27;</span> with grant option;</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>重新启动mysql.</p>
+</li>
+<li><p>MySQL启动或停止或重启命令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">   service mysql start    ---启动</span><br><span class="line">   service mysql stop     ---停止</span><br><span class="line">   service mysql restart  ---重启</span><br><span class="line">service mysql status   ---查看状态</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ol>
 ]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>ubuntun</tag>
+        <tag>linux</tag>
+        <tag>mysql</tag>
+      </tags>
   </entry>
 </search>
