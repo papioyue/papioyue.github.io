@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Ubuntun14.04安装MySQL5.7</title>
+    <title>CentOS7安装FTP教程</title>
     <url>/2020/08/09/CentOS7%E5%AE%89%E8%A3%85FTP%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<h1 id="CentOS7安装FTP教程"><a href="#CentOS7安装FTP教程" class="headerlink" title="CentOS7安装FTP教程"></a>CentOS7安装FTP教程</h1><a id="more"></a>
 
@@ -58,6 +58,40 @@
       </tags>
   </entry>
   <entry>
+    <title>RabbitMq安装(Windwos)</title>
+    <url>/2020/08/09/RabbitMq%E5%AE%89%E8%A3%85(Windows)/</url>
+    <content><![CDATA[<h1 id="RabbitMq安装-Windwos"><a href="#RabbitMq安装-Windwos" class="headerlink" title="RabbitMq安装(Windwos)"></a>RabbitMq安装(Windwos)</h1><a id="more"></a>
+
+<h2 id="安装前须知"><a href="#安装前须知" class="headerlink" title="安装前须知"></a>安装前须知</h2><p>由于RabbitMQ的安装需要依赖erlang的，所以在安装RabbitMQ前应该先安装erlang。但是RabbitMQ的版本与erlang的版本必须一致，具体可以查看此处:<a href="https://www.rabbitmq.com/which-erlang.html">具体说明</a></p>
+<h2 id="ErLang安装"><a href="#ErLang安装" class="headerlink" title="ErLang安装"></a>ErLang安装</h2><ul>
+<li><p>ErLang下载:<a href="https://www.erlang.org/downloads">下载链接</a></p>
+</li>
+<li><p>安装教程：很简单一路next即可。</p>
+<h2 id="RabbitMQ安装"><a href="#RabbitMQ安装" class="headerlink" title="RabbitMQ安装"></a>RabbitMQ安装</h2></li>
+<li><p>RabbitMQ官网下载地址:<a href="https://www.rabbitmq.com/download.html">下载链接</a><br>由于官网下载速度过慢，建议用此链接下载:<a href="https://dl.bintray.com/rabbitmq/all/rabbitmq-server/">快速链接</a></p>
+</li>
+<li><p>安装教程：so easy.一路next即可。</p>
+<h2 id="配置RabbitMQ"><a href="#配置RabbitMQ" class="headerlink" title="配置RabbitMQ"></a>配置RabbitMQ</h2></li>
+<li><p>启动 rabbitmq_management<br>用cmd进入到安装RabbitMQ的目录的sbin:    </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">D:\Program Files (x86)\rabbitmq_server-3.8.3\sbin</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">abbitmq-plugins <span class="built_in">enable</span> rabbitmq_management</span><br></pre></td></tr></table></figure>
+<p>执行成功如下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">D:\Program Files (x86)\rabbitmq_server-3.8.3\sbin&gt;rabbitmq-plugins <span class="built_in">enable</span> rabbitmq_management</span><br><span class="line">Enabling plugins on node rabbit@DESKTOP-KK65UV4:</span><br><span class="line">rabbitmq_management</span><br><span class="line">The following plugins have been configured:</span><br><span class="line">  rabbitmq_management</span><br><span class="line">  rabbitmq_management_agent</span><br><span class="line">  rabbitmq_web_dispatch</span><br><span class="line">Applying plugin configuration to rabbit@DESKTOP-KK65UV4...</span><br><span class="line">The following plugins have been enabled:</span><br><span class="line">  rabbitmq_management</span><br><span class="line">  rabbitmq_management_agent</span><br><span class="line">  rabbitmq_web_dispatch</span><br><span class="line"></span><br><span class="line">started 3 plugins.</span><br></pre></td></tr></table></figure>
+<p>验证是否安装成功，在浏览器中访问该链接:<a href="localhost:15672">成功</a>，如下图：<br><img src="https://img-blog.csdnimg.cn/20200510151255978.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM4MTg3Mzg1,size_16,color_FFFFFF,t_70#pic_center" alt="RabbitMQ登录页面"></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>RabbitMQ</tag>
+        <tag>ErLang</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Ubuntun14.04安装MySQL5.7</title>
     <url>/2020/08/09/Ubuntun14-04%E5%AE%89%E8%A3%85MySQL5.7/</url>
     <content><![CDATA[<h2 id="Ubuntun14-04安装MySQL5-7"><a href="#Ubuntun14-04安装MySQL5-7" class="headerlink" title="Ubuntun14.04安装MySQL5.7"></a>Ubuntun14.04安装MySQL5.7</h2><a id="more"></a>
@@ -108,7 +142,7 @@
       </tags>
   </entry>
   <entry>
-    <title>Ubuntun14.04安装MySQL5.7</title>
+    <title>GIT安装包下载过慢问题</title>
     <url>/2020/08/09/git%E5%AE%89%E8%A3%85%E5%8C%85%E4%B8%8B%E8%BD%BD%E8%BF%87%E6%85%A2%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h2 id="使用npm淘宝镜像解决GIT安装包下载过慢问题"><a href="#使用npm淘宝镜像解决GIT安装包下载过慢问题" class="headerlink" title="使用npm淘宝镜像解决GIT安装包下载过慢问题"></a>使用npm淘宝镜像解决GIT安装包下载过慢问题</h2><a id="more"></a>
 
