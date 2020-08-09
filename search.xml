@@ -2,14 +2,73 @@
 <search>
   <entry>
     <title>Ubuntun14.04安装MySQL5.7</title>
+    <url>/2020/08/09/CentOS7%E5%AE%89%E8%A3%85FTP%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<h1 id="CentOS7安装FTP教程"><a href="#CentOS7安装FTP教程" class="headerlink" title="CentOS7安装FTP教程"></a>CentOS7安装FTP教程</h1><a id="more"></a>
+
+<ol>
+<li><p>首先安装vsftpd</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum -y install vsftpd</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改配置文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim /etc/vsftpd/vsftpd.conf</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#是否允许匿名，默认no</span></span><br><span class="line">anonymous_enable=NO</span><br><span class="line"></span><br><span class="line"><span class="comment">#这个设定值必须要为YES 时，在/etc/passwd内的账号才能以实体用户的方式登入我们的vsftpd主机</span></span><br><span class="line">local_enable=YES</span><br><span class="line"></span><br><span class="line"><span class="comment">#具有写权限</span></span><br><span class="line">write_enable=YES</span><br><span class="line"></span><br><span class="line"><span class="comment">#本地用户创建文件或目录的掩码</span></span><br><span class="line">local_umask=022</span><br><span class="line"></span><br><span class="line"><span class="comment">#当dirmessage_enable=YES时，可以设定这个项目来让vsftpd寻找该档案来显示讯息！您也可以设定其它档名！</span></span><br><span class="line">dirmessage_enable=YES</span><br><span class="line"></span><br><span class="line"><span class="comment">#当设定为YES时，使用者上传与下载日志都会被纪录起来。记录日志与下一个xferlog_file设定选项有关</span></span><br><span class="line">xferlog_enable=YESxferlog_std_format=YES</span><br><span class="line"></span><br><span class="line"><span class="comment">#上传与下载日志存放路径</span></span><br><span class="line">xferlog_file=/var/<span class="built_in">log</span>/xferlog </span><br><span class="line"></span><br><span class="line"><span class="comment">#开启20端口</span></span><br><span class="line">connect_from_port_20=YES</span><br><span class="line"></span><br><span class="line"><span class="comment">#关于系统安全的设定值：</span></span><br><span class="line"><span class="comment">#ascii_download_enable=YES(NO)</span></span><br><span class="line"><span class="comment">#如果设定为YES ，那么 client 就可以使用 ASCII 格式下载档案。</span></span><br><span class="line"><span class="comment">#一般来说，由于启动了这个设定项目可能会导致DoS 的攻击，因此预设是NO。</span></span><br><span class="line"><span class="comment">#ascii_upload_enable=YES(NO)</span></span><br><span class="line"><span class="comment">#与上一个设定类似的，只是这个设定针对上传而言！预设是NO。</span></span><br><span class="line">ascii_upload_enable=NO</span><br><span class="line">ascii_download_enable=NO</span><br><span class="line"><span class="comment">#通过搭配能实现以下几种效果： </span></span><br><span class="line"><span class="comment">#①当chroot_list_enable=YES，chroot_local_user=YES时，在/etc/vsftpd.chroot_list文件中列出的用户，可以切换到其他目录；未在文件中列出的用户，不能切换到其他目录。 </span></span><br><span class="line"><span class="comment">#②当chroot_list_enable=YES，chroot_local_user=NO时，在/etc/vsftpd.chroot_list文件中列出的用户，不能切换到其他目录；未在文件中列出的用户，可以切换到其他目录。 </span></span><br><span class="line"><span class="comment">#③当chroot_list_enable=NO，chroot_local_user=YES时，所有的用户均不能切换到其他目录。 </span></span><br><span class="line"><span class="comment">#④当chroot_list_enable=NO，chroot_local_user=NO时，所有的用户均可以切换到其他目录。</span></span><br><span class="line"></span><br><span class="line">chroot_local_user=YES</span><br><span class="line">chroot_list_enable=YES</span><br><span class="line">chroot_list_file=/etc/vsftpd/chroot_list</span><br><span class="line"></span><br><span class="line"><span class="comment">#这个是pam模块的名称，我们放置在/etc/pam.d/vsftpd</span></span><br><span class="line">pam_service_name=vsftpd</span><br><span class="line"></span><br><span class="line"><span class="comment">#当然我们都习惯支持TCP Wrappers的啦！</span></span><br><span class="line">tcp_wrappers=YES</span><br><span class="line"></span><br><span class="line"><span class="comment">#不添加下面这个会报错：500 OOPS: vsftpd: refusing to run with writable root inside chroot()</span></span><br><span class="line">allow_writeable_chroot=YES</span><br><span class="line"></span><br><span class="line"><span class="comment">#ftp的端口号</span></span><br><span class="line">listen_port=60021</span><br><span class="line"><span class="comment">#启动被动式联机(passivemode)</span></span><br><span class="line">pasv_enable=YES</span><br><span class="line"><span class="comment">#上面两个是与passive mode 使用的 port number 有关，如果您想要使用65400到65410 这 11 个 port 来进行被动式资料的连接，可以这样设定</span></span><br><span class="line">pasv_min_port=65400</span><br><span class="line">pasv_max_port=65410</span><br><span class="line"></span><br><span class="line"><span class="comment">#FTP访问目录为用户根目录</span></span><br><span class="line">local_root=/data/ftp/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>关闭防火墙（测试环境）</p>
+<p>这要是测试环境可以先关闭防火墙</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl stop firewalld</span><br></pre></td></tr></table></figure>
+
+<p>如果是生产环境，最好开启防火墙，添加相应的端口</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#添加主端口</span></span><br><span class="line">[root@tsemongo01 vsftpd]<span class="comment"># firewall-cmd --permanent --zone=public --add-port=60021/tcp</span></span><br><span class="line">success</span><br><span class="line"><span class="comment">#添加被动端口</span></span><br><span class="line">[root@tsemongo01 vsftpd]<span class="comment"># firewall-cmd --permanent --zone=public --add-port=65400-65410/tcp</span></span><br><span class="line">success</span><br><span class="line">[root@tsemongo01 vsftpd]<span class="comment"># firewall-cmd --reload </span></span><br><span class="line">success</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建用户</p>
+<p>添加FTP用户命令 ：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">useradd xxx</span><br></pre></td></tr></table></figure>
+
+<p>设置FTP用户密码：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">passwd xxx</span><br></pre></td></tr></table></figure>
+
+<p>删除FTP用户：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">userdel xxx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>切换为新用户并创建根目录</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/xxx</span><br><span class="line">mkdir xxx</span><br></pre></td></tr></table></figure>
+
+<p>设置用户访问目录权限</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">chown -R xxx /home/xxx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动或暂停服务命令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl start vsftpd.service</span><br><span class="line">systemctl status vsftpd.service</span><br><span class="line">systemctl stop vsftpd.service</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试FTP是否能连上</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ftp ip</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置vsftpd服务开机启动</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> vsftpd.service</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Centos</tag>
+        <tag>Linux</tag>
+        <tag>FTP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntun14.04安装MySQL5.7</title>
     <url>/2020/08/09/Ubuntun14-04%E5%AE%89%E8%A3%85MySQL5.7/</url>
-    <content><![CDATA[<h2 id="Ubuntun14-04安装MySQL5-7"><a href="#Ubuntun14-04安装MySQL5-7" class="headerlink" title="Ubuntun14.04安装MySQL5.7"></a>Ubuntun14.04安装MySQL5.7</h2><h3 id="准备环境"><a href="#准备环境" class="headerlink" title="准备环境"></a>准备环境</h3><ol>
+    <content><![CDATA[<h2 id="Ubuntun14-04安装MySQL5-7"><a href="#Ubuntun14-04安装MySQL5-7" class="headerlink" title="Ubuntun14.04安装MySQL5.7"></a>Ubuntun14.04安装MySQL5.7</h2><a id="more"></a>
+
+<h3 id="准备环境"><a href="#准备环境" class="headerlink" title="准备环境"></a>准备环境</h3><ol>
 <li><p>查看系统版本下载相对应的mysql版本</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">uname -a 或者 lsb_release -a</span><br></pre></td></tr></table></figure>
 
 <p>下载对应的版本<a href="https://dev.mysql.com/downloads/file/?id=471390">mysq5.7.19</a>,下载完成后将MySQL安装包上传的到服务器</p>
-<a id="more"></a>
-
+</li>
+</ol>
 <h3 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h3><ol>
 <li><p>切换为root权限</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">su root</span><br></pre></td></tr></table></figure>
@@ -38,16 +97,33 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">   service mysql start    ---启动</span><br><span class="line">   service mysql stop     ---停止</span><br><span class="line">   service mysql restart  ---重启</span><br><span class="line">service mysql status   ---查看状态</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-</li>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Ubuntun</tag>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntun14.04安装MySQL5.7</title>
+    <url>/2020/08/09/git%E5%AE%89%E8%A3%85%E5%8C%85%E4%B8%8B%E8%BD%BD%E8%BF%87%E6%85%A2%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h2 id="使用npm淘宝镜像解决GIT安装包下载过慢问题"><a href="#使用npm淘宝镜像解决GIT安装包下载过慢问题" class="headerlink" title="使用npm淘宝镜像解决GIT安装包下载过慢问题"></a>使用npm淘宝镜像解决GIT安装包下载过慢问题</h2><a id="more"></a>
+
+<ol>
+<li>访问npm淘宝镜像：<a href="https://npm.taobao.org/mirrors/git-for-windows/">npm</a><br><img src="https://img-blog.csdnimg.cn/20200324143800154.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM4MTg3Mzg1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+<li>选择适合自己的版本下载即可。</li>
 </ol>
 ]]></content>
       <categories>
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>ubuntun</tag>
-        <tag>linux</tag>
-        <tag>mysql</tag>
+        <tag>Linux</tag>
+        <tag>Ubuntun</tag>
+        <tag>MySQL</tag>
       </tags>
   </entry>
 </search>
