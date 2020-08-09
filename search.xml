@@ -84,7 +84,7 @@
 <p>验证是否安装成功，在浏览器中访问该链接:<a href="localhost:15672">成功</a>，如下图：<br><img src="https://img-blog.csdnimg.cn/20200510151255978.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM4MTg3Mzg1,size_16,color_FFFFFF,t_70#pic_center" alt="RabbitMQ登录页面"></p>
 ]]></content>
       <categories>
-        <category>Linux</category>
+        <category>MQ</category>
       </categories>
       <tags>
         <tag>RabbitMQ</tag>
@@ -147,17 +147,18 @@
     <content><![CDATA[<h2 id="使用npm淘宝镜像解决GIT安装包下载过慢问题"><a href="#使用npm淘宝镜像解决GIT安装包下载过慢问题" class="headerlink" title="使用npm淘宝镜像解决GIT安装包下载过慢问题"></a>使用npm淘宝镜像解决GIT安装包下载过慢问题</h2><a id="more"></a>
 
 <ol>
-<li>访问npm淘宝镜像：<a href="https://npm.taobao.org/mirrors/git-for-windows/">npm</a><br><img src="https://img-blog.csdnimg.cn/20200324143800154.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM4MTg3Mzg1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
-<li>选择适合自己的版本下载即可。</li>
+<li><p>访问npm淘宝镜像：<a href="https://npm.taobao.org/mirrors/git-for-windows/">npm</a></p>
+<p><img src="https://img-blog.csdnimg.cn/20200324143800154.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM4MTg3Mzg1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+</li>
+<li><p>选择适合自己的版本下载即可。</p>
+</li>
 </ol>
 ]]></content>
       <categories>
-        <category>Linux</category>
+        <category>Git</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
-        <tag>Ubuntun</tag>
-        <tag>MySQL</tag>
+        <tag>Git</tag>
       </tags>
   </entry>
 </search>
