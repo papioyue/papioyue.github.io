@@ -92,6 +92,26 @@
       </tags>
   </entry>
   <entry>
+    <title>GIT安装包下载过慢问题</title>
+    <url>/2020/08/09/git%E5%AE%89%E8%A3%85%E5%8C%85%E4%B8%8B%E8%BD%BD%E8%BF%87%E6%85%A2%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h2 id="使用npm淘宝镜像解决GIT安装包下载过慢问题"><a href="#使用npm淘宝镜像解决GIT安装包下载过慢问题" class="headerlink" title="使用npm淘宝镜像解决GIT安装包下载过慢问题"></a>使用npm淘宝镜像解决GIT安装包下载过慢问题</h2><a id="more"></a>
+
+<ol>
+<li><p>访问npm淘宝镜像：<a href="https://npm.taobao.org/mirrors/git-for-windows/">npm</a></p>
+<p><img src="https://img-blog.csdnimg.cn/20200324143800154.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM4MTg3Mzg1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+</li>
+<li><p>选择适合自己的版本下载即可。</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Ubuntun14.04安装MySQL5.7</title>
     <url>/2020/08/09/Ubuntun14-04%E5%AE%89%E8%A3%85MySQL5.7/</url>
     <content><![CDATA[<h2 id="Ubuntun14-04安装MySQL5-7"><a href="#Ubuntun14-04安装MySQL5-7" class="headerlink" title="Ubuntun14.04安装MySQL5.7"></a>Ubuntun14.04安装MySQL5.7</h2><a id="more"></a>
@@ -139,26 +159,6 @@
         <tag>Linux</tag>
         <tag>Ubuntun</tag>
         <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>GIT安装包下载过慢问题</title>
-    <url>/2020/08/09/git%E5%AE%89%E8%A3%85%E5%8C%85%E4%B8%8B%E8%BD%BD%E8%BF%87%E6%85%A2%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h2 id="使用npm淘宝镜像解决GIT安装包下载过慢问题"><a href="#使用npm淘宝镜像解决GIT安装包下载过慢问题" class="headerlink" title="使用npm淘宝镜像解决GIT安装包下载过慢问题"></a>使用npm淘宝镜像解决GIT安装包下载过慢问题</h2><a id="more"></a>
-
-<ol>
-<li><p>访问npm淘宝镜像：<a href="https://npm.taobao.org/mirrors/git-for-windows/">npm</a></p>
-<p><img src="https://img-blog.csdnimg.cn/20200324143800154.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM4MTg3Mzg1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-</li>
-<li><p>选择适合自己的版本下载即可。</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Git</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
       </tags>
   </entry>
 </search>
