@@ -303,6 +303,26 @@
     
     
     
+        <div class="reward-container">
+  <div>各位老铁，欢迎骚扰.</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.jpg" alt="papio 微信支付" style="width:170px;height:162px;margin-bottom:8px;">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="papio 支付宝" style="width:170px;height:162px;margin-bottom:8px;">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
 
       <footer class="post-footer">
           <div class="post-tags">
@@ -322,8 +342,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/08/09/git%E5%AE%89%E8%A3%85%E5%8C%85%E4%B8%8B%E8%BD%BD%E8%BF%87%E6%85%A2%E9%97%AE%E9%A2%98/" rel="prev" title="GIT安装包下载过慢问题">
-      <i class="fa fa-chevron-left"></i> GIT安装包下载过慢问题
+    <a href="/2020/08/09/Ubuntun14-04%E5%AE%89%E8%A3%85MySQL5.7/" rel="prev" title="Ubuntun14.04安装MySQL5.7">
+      <i class="fa fa-chevron-left"></i> Ubuntun14.04安装MySQL5.7
     </a></div>
       <div class="post-nav-item">
     <a href="/2020/08/09/CentOS7%E5%AE%89%E8%A3%85FTP%E6%95%99%E7%A8%8B/" rel="next" title="CentOS7安装FTP教程">
@@ -336,12 +356,16 @@
   
   
   
-  @import "my-post-copyright"
 
 
 
           </div>
           
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81MTMwNS8yNzc4Ng=="></div>
+  </div>
+  
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -425,6 +449,9 @@
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
         <a href="https://github.com/papioyue" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;papioyue" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/qq_38187385" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_38187385" rel="noopener" target="_blank"><i class="fab fa-csdn fa-fw"></i>CSDN</a>
       </span>
   </div>
 
@@ -562,6 +589,22 @@
   
 
   
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
 
 </body>
 </html>
